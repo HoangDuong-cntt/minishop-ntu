@@ -2,14 +2,14 @@
 
 Áp dụng cho **tất cả 6 buổi thực hành** học phần Kiểm thử phần mềm (SOT357).
 
-Trong học phần này, bài thực hành được nộp theo đúng cách các nhóm phát triển phần mềm chuyên nghiệp làm việc: **mỗi thay đổi đi qua một Pull Request (PR) và được review trước khi hợp nhất**. Giảng viên sẽ nhận xét trực tiếp trên từng dòng bài làm của em.
+Trong học phần này, bài thực hành được nộp theo đúng cách các nhóm phát triển phần mềm chuyên nghiệp làm việc: **mỗi thay đổi đi qua một Pull Request (PR) và được review trước khi hợp nhất**. Giảng viên sẽ nhận xét trực tiếp trên từng dòng bài làm của bạn.
 
 ---
 
 ## Tổng quan
 
 ```
- Repo của giảng viên (mẫu)            Repo RIÊNG TƯ của em
+ Repo của giảng viên (mẫu)            Repo RIÊNG TƯ của bạn
  ────────────────────────             ─────────────────────────────────────
  minishop-ntu  ──(upstream)──▶  main ──┬── nhánh buoi-01 ──▶ PR ──▶ GV review ──▶ Approve ──▶ Merge
                                        └── nhánh buoi-02 ──▶ PR ──▶ …
@@ -17,7 +17,7 @@ Trong học phần này, bài thực hành được nộp theo đúng cách các
 
 | Loại bài | Repo | Tên nhánh | Ai mở PR | Ai phải review |
 |---|---|---|---|---|
-| Cá nhân | `sot357-<MSSV>` (của em) | `buoi-XX` | Em | Giảng viên |
+| Cá nhân | `sot357-<MSSV>` (của bạn) | `buoi-XX` | Bạn | Giảng viên |
 | Nhóm (chỉ khi đề bài yêu cầu) | `sot357-nhom-<số nhóm>` (của nhóm) | `buoi-XX-nhom` | Thư ký (Scribe) | Moderator **và** giảng viên |
 
 > **Buổi 1 làm hoàn toàn cá nhân**: cả 3 phần nộp chung một PR trên nhánh `buoi-01` của repo `sot357-<MSSV>`. Dòng *Nhóm* chỉ áp dụng cho buổi nào đề bài ghi rõ là bài nhóm.
@@ -25,7 +25,7 @@ Trong học phần này, bài thực hành được nộp theo đúng cách các
 **Quy tắc bắt buộc**
 1. Repo phải để chế độ **Private** (riêng tư).
 2. **Không tự bấm Merge** khi giảng viên chưa *Approve*.
-3. Chỉ sửa các file mà đề bài cho phép. Hệ thống kiểm tra tự động sẽ báo lỗi nếu em sửa file khác.
+3. Chỉ sửa các file mà đề bài cho phép. Hệ thống kiểm tra tự động sẽ báo lỗi nếu bạn sửa file khác.
 
 ---
 
@@ -40,10 +40,10 @@ Trong học phần này, bài thực hành được nộp theo đúng cách các
 2. **Repository name:** `sot357-<MSSV>` (ví dụ `sot357-64130001`)
 3. Chọn **Private**.
 4. **KHÔNG** tích *Add a README*, *.gitignore*, *license* (repo phải trống hoàn toàn).
-5. Bấm **Create repository**, sao chép đường dẫn dạng `https://github.com/<tên-em>/sot357-<MSSV>.git`.
+5. Bấm **Create repository**, sao chép đường dẫn dạng `https://github.com/<tên-bạn>/sot357-<MSSV>.git`.
 
-### A3. Lấy mã nguồn mẫu và đẩy lên repo của em
-Mở terminal ở thư mục em muốn lưu bài, chạy lần lượt (thay phần trong `< >`):
+### A3. Lấy mã nguồn mẫu và đẩy lên repo của bạn
+Mở terminal ở thư mục bạn muốn lưu bài, chạy lần lượt (thay phần trong `< >`):
 
 ```bash
 git clone <URL-repo-mẫu-của-giảng-viên> sot357-<MSSV>
@@ -52,12 +52,12 @@ cd sot357-<MSSV>
 # Đổi tên nguồn gốc thành "upstream" (repo của giảng viên, dùng để nhận tài liệu buổi sau)
 git remote rename origin upstream
 
-# Gắn repo riêng của em làm "origin"
-git remote add origin https://github.com/<tên-em>/sot357-<MSSV>.git
+# Gắn repo riêng của bạn làm "origin"
+git remote add origin https://github.com/<tên-bạn>/sot357-<MSSV>.git
 git push -u origin main
 ```
 
-Kiểm tra: `git remote -v` phải thấy cả `origin` (repo của em) và `upstream` (repo của giảng viên).
+Kiểm tra: `git remote -v` phải thấy cả `origin` (repo của bạn) và `upstream` (repo của giảng viên).
 
 > Vì sao không dùng nút *Use this template* hoặc *Fork*? Repo tạo bằng *template* không giữ lịch sử chung với repo mẫu nên không nhận được tài liệu các buổi sau; còn *fork* của repo công khai thì không thể để riêng tư.
 
@@ -80,7 +80,7 @@ Làm lại A2 → A5 với tên `sot357-nhom-<số nhóm>` (ví dụ `sot357-nho
 ```bash
 git checkout main
 git pull upstream main     # nhận tài liệu buổi mới từ giảng viên
-git push origin main       # cập nhật lên repo của em
+git push origin main       # cập nhật lên repo của bạn
 ```
 
 ### B2. Tạo nhánh cho buổi học
@@ -117,14 +117,14 @@ Ngay sau khi mở PR, mục **Checks** sẽ chạy trong khoảng 1 phút:
 - ✅ **xanh:** bài đã qua kiểm tra hình thức (đúng nhánh, đúng file, ESLint sạch…);
 - ❌ **đỏ:** bấm *Details* để xem mục nào chưa đạt, sửa lại trên máy, `commit` + `push`. PR tự cập nhật và kiểm tra chạy lại.
 
-> Ở Buổi 1, lúc nộp cuối giờ **dấu ❌ ở mục ESLint là bình thường** nếu em chưa sửa xong Phần 3. Em có đến 23:59 để push thêm commit sửa.
+> Ở Buổi 1, lúc nộp cuối giờ **dấu ❌ ở mục ESLint là bình thường** nếu bạn chưa sửa xong Phần 3. Bạn có đến 23:59 để push thêm commit sửa.
 
 Kiểm tra tự động chỉ xét **hình thức**. Điểm nội dung do giảng viên chấm.
 
 ### B6. Nhận góp ý và sửa bài
 Giảng viên sẽ review và chọn một trong ba:
 
-| Giảng viên chọn | Ý nghĩa | Em làm gì |
+| Giảng viên chọn | Ý nghĩa | Bạn làm gì |
 |---|---|---|
 | **Comment** | Góp ý, không bắt buộc sửa | Đọc, trả lời nếu cần |
 | **Request changes** | Phải sửa | Sửa trên cùng nhánh, commit, push. Trả lời từng góp ý (ví dụ "Đã sửa ở commit abc123") rồi bấm *Resolve conversation*. Sau đó bấm biểu tượng 🔄 cạnh tên giảng viên để yêu cầu review lại |
@@ -135,7 +135,7 @@ Giảng viên sẽ review và chọn một trong ba:
 git checkout main
 git pull origin main
 ```
-Máy em đã sẵn sàng cho buổi sau (quay lại B1).
+Máy bạn đã sẵn sàng cho buổi sau (quay lại B1).
 
 ---
 
@@ -167,28 +167,7 @@ Riêng bước A3 (thiết lập `upstream`, `origin`) nên làm bằng dòng l�
 
 ---
 
-## E. Dùng MÁY CỦA PHÒNG THỰC HÀNH
-
-Máy phòng lab dùng chung cho nhiều người, nên cần làm đúng các bước sau để bài của em không bị người khác đẩy nhầm hoặc đứng tên nhầm.
-
-**Đầu giờ**, khai báo tên **chỉ cho repo này** (không dùng `--global`):
-```bash
-git config user.name "Nguyen Van A"
-git config user.email "email-dang-ky-github@..."
-```
-Lần `push` đầu tiên, cửa sổ đăng nhập GitHub sẽ hiện ra. Chọn **Sign in with your browser** và đăng nhập tài khoản của em.
-
-**Cuối giờ (bắt buộc)**, xóa thông tin đăng nhập đã lưu:
-```bash
-printf "protocol=https\nhost=github.com\n\n" | git credential reject
-```
-Sau đó đăng xuất GitHub trên trình duyệt và trong VS Code (biểu tượng *Accounts* ở góc dưới bên trái), rồi xóa thư mục bài làm nếu không cần giữ.
-
-Nếu quên bước này, người dùng máy sau có thể push dưới tên tài khoản của em.
-
----
-
-## F. Lỗi thường gặp
+## E. Lỗi thường gặp
 
 | Hiện tượng | Cách xử lý |
 |---|---|
@@ -198,12 +177,12 @@ Nếu quên bước này, người dùng máy sau có thể push dưới tên t�
 | Lỡ commit trên `main` rồi | `git branch buoi-01` → `git reset --hard upstream/main` → `git checkout buoi-01` (hỏi giảng viên nếu chưa chắc) |
 | Kiểm tra báo "Không được sửa: …" | Hoàn tác file đó: `git checkout main -- <đường-dẫn-file>` → commit → push |
 | Kiểm tra báo "Tên nhánh … không có trong quy định" | Đổi tên nhánh: `git branch -m buoi-01` → `git push origin -u buoi-01` → đóng PR cũ, mở PR mới |
-| `git pull upstream main` báo xung đột (conflict) | Thường do em sửa file không được phép. Báo giảng viên, **không tự xóa bừa** |
-| Không thấy nút *Merge* | Em chưa được giảng viên *Approve*, hoặc có xung đột với `main` |
+| `git pull upstream main` báo xung đột (conflict) | Thường do bạn sửa file không được phép. Báo giảng viên, **không tự xóa bừa** |
+| Không thấy nút *Merge* | Bạn chưa được giảng viên *Approve*, hoặc có xung đột với `main` |
 
 ---
 
-## G. Bảng lệnh Git tóm tắt
+## F. Bảng lệnh Git tóm tắt
 
 | Việc cần làm | Lệnh |
 |---|---|
