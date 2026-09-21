@@ -65,7 +65,7 @@ Kiểm tra: `git remote -v` phải thấy cả `origin` (repo của em) và `ups
 Trên trang repo: **Settings → Collaborators → Add people** → nhập tài khoản GitHub của giảng viên: `<tài-khoản-GV>`.
 
 ### A5. Khai báo repo
-Điền link repo vào biểu mẫu giảng viên cung cấp: `<link Google Form>`.
+Điền link repo vào biểu mẫu giảng viên cung cấp: [Google]([https://google.com](https://docs.google.com/forms/d/e/1FAIpQLSdEjsJn2HUxLWmiFHy9alfB7wnAGQWvDtT3H-XGsZJRKpW5XQ/viewform?usp=publish-editor)).
 
 ### A6. Repo nhóm (chỉ Moderator của nhóm làm)
 > Chỉ làm khi đề bài một buổi nào đó yêu cầu bài nhóm. **Buổi 1 không cần.**
